@@ -179,9 +179,9 @@ $grey-font:#A0A0A0;
       opacity: .7;
     }
     &--title{
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       line-height: 2.5rem;
-      font-weight: bold;
+      font-weight: 550;
     }
     &--time{
       display: block;
