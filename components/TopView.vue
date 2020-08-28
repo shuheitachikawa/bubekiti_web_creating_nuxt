@@ -1,0 +1,196 @@
+<template>
+  <section class="topview" id="hoge" v-bind:class="{'nuxt-link-top': $route.path === '/'}">
+    <transition name="slide">
+      <h1 v-if="$route.path === '/'" class="topview__title">秦野のホームページ屋</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path === '/services'" class="topview__title">SERVICES</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path.indexOf('/services/') != -1" class="topview__title">SERVICE</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path === '/works'" class="topview__title">WORKS</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path.indexOf('/works/') != -1" class="topview__title">WORK</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path === '/flow'" class="topview__title">FLOW</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path === '/blogs'" class="topview__title">BLOGS</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path.indexOf('/blogs/') != -1" class="topview__title">BLOG</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path === '/inquiry'" class="topview__title">INQUIRY</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path === '/about'" class="topview__title">ABOUT</h1>
+    </transition>
+    <transition name="slide">
+      <h1 v-if="$route.path === '/qa'" class="topview__title">Q＆A</h1>
+    </transition>
+
+    <div class="topview__img">
+      <img src="../assets/intro.png" alt="手軽に名刺替わりのホームページ制作">
+    </div>
+
+    <!-- <particles /> -->
+    <!-- <particles-bg type="circle" :bg="true" /> -->
+    <!-- <particles-bg
+      type="circle"
+      color="#8400B5"
+      num= '[1, 10]'
+      scale= '[1.1, 0.4]'
+      alpha= '[0.6, 0]'
+      class="topview__area"
+    >
+    </particles-bg> -->
+    <!-- <particles-bg
+      type="circle"
+      :number="30"
+      :area="1000"
+      color="#8400B5"
+      shape="circle"
+      :opacity="0"
+      :speed="4"
+      hoverMode="repulse"
+      :distanse="100"
+      clickMode="push"
+      class="topview__area"
+    >
+    </particles-bg> -->
+
+    
+  <particles-bg type="custom" :config="config" :bg="true" class="topview__area"/>
+
+  
+    
+  </section>
+</template>
+
+<script>
+  export default {
+    data: function() {
+      return {
+        config: {
+          num: [1, 1],
+          rps: 0.3,
+          radius: [10, 3],
+          life: [10, 10],
+          v: [1, 2],
+          tha: [-10, 10],
+          shape: "circle",
+          alpha: [0.9, 0],
+          scale: [1, 1],
+          position: "all",
+          cross: "dead",
+          random: 5,
+          color:['#8400B5','#8400B5']
+        }
+      };
+    }
+  }
+</script>
+
+
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+
+.slide-enter-active{
+  transition: .7s;
+}
+.slide-leave-active{
+  transition: .7s;
+}
+.slide-enter{
+  color:transparent;
+  text-shadow: 0 0 8px rgba(0,0,0,0.5);
+  opacity: 0;
+}
+.slide-enter-to{
+  text-shadow: none;
+}
+.slide-leave{
+  text-shadow: none;
+}
+.slide-leave-to{
+  color:transparent;
+  text-shadow: 0 0 8px rgba(0,0,0,0.5);
+  opacity: 0;
+}
+
+
+.topview{
+  //background-color: red;
+  height:90px;
+  margin-top: 72px;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  &__img{
+    display: none;
+  }
+  &__title{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    //left:50%;
+    //transform: translate(-50%, -50%);
+    font-size: 3.2rem;
+    overflow: hidden;
+  }
+}
+.canvas{
+  height: 100vh !important;
+}
+.nuxt-link-top{
+  margin-top: 0;
+  height:100vh;
+  .topview__title{
+    top:50%;
+  }
+}
+
+@media (max-width:750px){
+  .topview{
+    margin-top: 127px;
+    overflow: hidden;
+  }
+  .nuxt-link-top{
+    margin-top: 0;
+    height:100vh;
+    .topview{
+      &__title{
+        top:25%;
+      }
+      &__img{
+        display: block;
+        position: absolute;
+        top:40%;
+        left:10px;
+        z-index: -1;
+        opacity: .7;
+      }
+    }
+  } 
+}
+
+@media (max-width:500px){
+  .topview{
+    margin-top: 100px;
+    overflow: hidden;
+  }
+  .nuxt-link-top{
+    margin-top: 0;
+    height:100vh;
+  }
+}
+
+</style>
+
