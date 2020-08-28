@@ -28,40 +28,60 @@
 
 // @ is an alias to /src
 import Contact from '@/components/Contact.vue'
+import axios from 'axios';
 
 export default {
-  name: 'WorkDetail',
-  components: {
-    Contact,
-  },
-  data: function(){
-    return {
-      works: null,
+
+  data(){
+    return{
+      works: []
     };
   },
-  created: function(){
-    this.fetchArticle();
-  },
-  watch:{
-    '$route': 'fetchArticle'
-  },
-  methods: {
-    fetchArticle: function(){
-      fetch('https://bubekiti.microcms.io/api/v1/works', {
-      headers: {
-        'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
-      },
-    })
-      .then(res => res.json())
-      .then(json => json.contents)
-      .then(works => {
-        this.works = works
-      })
-      .catch(error => {
-        console.log(error);
-      })
-    },      
-  },
+  async asyncData(){
+    const{data} = await axios.get(
+      "https://bubekiti.microcms.io/api/v1/works",
+      {
+        headers: {'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'}
+      }
+    );
+    return{
+      works: data.contents
+    };
+    console.log(works);
+  }
+
+  // name: 'WorkDetail',
+  // components: {
+  //   Contact,
+  // },
+  // data: function(){
+  //   return {
+  //     works: null,
+  //   };
+  // },
+  // created: function(){
+  //   this.fetchArticle();
+  // },
+  // watch:{
+  //   '$route': 'fetchArticle'
+  // },
+  // methods: {
+  //   fetchArticle: function(){
+  //     fetch('https://bubekiti.microcms.io/api/v1/works', {
+  //     headers: {
+  //       'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(json => json.contents)
+  //     .then(works => {
+  //       this.works = works
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     })
+  //   },      
+  // },
 }
 </script>
 
