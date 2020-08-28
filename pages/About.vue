@@ -47,47 +47,77 @@
 // }
 
 
-import Contact from '@/components/Contact.vue'
+import Contact from '@/components/Contact.vue';
+
+import axios from 'axios';
 
 export default {
-  name: 'About',
-  components: {
-    Contact,
-  },
-  data: function(){
-    return {
+
+  data(){
+    return{
       strength: "",
       person: "",
       tableItems: "",
-      real: false,
-    }
+      real: false, 
+    };
   },
-  created: function(){
-    this.fetchAbout();
-    this.changeImageByDelay();
-  },
-  methods: {
-    fetchAbout: function(){
-      fetch('https://bubekiti.microcms.io/api/v1/about', {
-      headers: {
-        'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
-      },
-    })
-      .then(res => res.json())
-      .then(json => {
-        this.strength = json.strength;
-        this.person = json.person;
-        this.tableItems = json.profile;
-      })
-    }, 
-    changeImageByDelay: function(){
-      setTimeout(this.changeImage, 500);
-    },
-    changeImage: function(){
-      this.real = true;
-    }
-  },
+  async asyncData(){
+    const{data} = await axios.get(
+      "https://bubekiti.microcms.io/api/v1/about",
+      {
+        headers: {'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'}
+      }
+    );
+    return{
+      strength: data.strength,
+      person: data.person,
+      tableItems: data.profile
+    };
+  }
 }
+
+
+
+
+// export default {
+//   name: 'About',
+//   components: {
+//     Contact,
+//   },
+//   data: function(){
+//     return {
+//       strength: "",
+//       person: "",
+//       tableItems: "",
+//       real: false,
+//     }
+//   },
+//   created: function(){
+//     this.fetchAbout();
+//     this.changeImageByDelay();
+//   },
+//   methods: {
+//     fetchAbout: function(){
+//       fetch('https://bubekiti.microcms.io/api/v1/about', {
+//       headers: {
+//         'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
+//       },
+//     })
+//       .then(res => res.json())
+//       .then(json => {
+//         this.strength = json.strength;
+//         this.person = json.person;
+//         this.tableItems = json.profile;
+//       })
+//     }, 
+//     changeImageByDelay: function(){
+//       setTimeout(this.changeImage, 500);
+//     },
+//     changeImage: function(){
+//       this.real = true;
+//     }
+//   },
+// }
 </script>
 
 
