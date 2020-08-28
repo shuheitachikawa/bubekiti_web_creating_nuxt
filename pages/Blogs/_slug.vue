@@ -79,11 +79,36 @@ export default {
         this.category = articles[0].category;
         this.intro = articles[0].intro.intro;
         this.text = articles[0].content;
+        this.description = htmlthis.text
       })
       .catch(error => {
         console.log(error);
       })
     },      
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        //{ name: 'description', content: this.text },
+
+        //{ property: 'og:type', content: 'website' },
+        { property: 'og:title', content: this.title },
+        //{ property: 'og:description', content: '神奈川県秦野市を拠点に活動しているWeb制作フリーランス(SOHO)です。神奈川・東京を中心にWeb制作業務(ホームページ制作 / HTMLコーディング / レスポンシブデザイン / CMS構築)を承っております。' },
+        //{ property: 'og:url', content: 'https://bubekiti.com' },
+        //{ property: 'og:site_name', content: 'Bubekiti Web creating' },
+        { property: 'og:image', content: this.image },
+
+        //{ property: 'fb:app_id', content: '591933487923354' },
+
+        //{ name: 'twitter:card', content: 'summary_large_image' },
+        //{ name: 'twitter:site', content: '@bubekiti' },
+        //{ name: 'twitter:domain', content: 'bubekiti.com' },
+        { name: 'twitter:title', content: this.title },
+        //{ name: 'twitter:description', content: '神奈川県秦野市を拠点に活動しているWeb制作フリーランス(SOHO)です。神奈川・東京を中心にWeb制作業務(ホームページ制作 / HTMLコーディング / レスポンシブデザイン / CMS構築)を承っております。' },
+        { property: 'twitter:image', content: this.image },
+      ]
+    }
   }
 }
 </script>
