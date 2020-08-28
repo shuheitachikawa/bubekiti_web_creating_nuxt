@@ -73,6 +73,17 @@ export default {
       person: data.person,
       tableItems: data.profile
     };
+  },
+  created: function(){
+    this.changeImageByDelay();
+  },
+  methods: {
+    changeImageByDelay: function(){
+      setTimeout(this.changeImage, 500);
+    },
+    changeImage: function(){
+      this.real = true;
+    }
   }
 }
 

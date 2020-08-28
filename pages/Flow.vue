@@ -29,43 +29,71 @@ import Contact from '@/components/Contact.vue'
 import BtnToQuote from '@/components/BtnToQuote.vue'
 import BtnToQa from '@/components/BtnToQa.vue'
 
+import axios from 'axios';
+
 export default {
-  name: 'WorkDetail',
-  components: {
-    Contact,
-    BtnToQuote,
-    BtnToQa,
-  },
-  data: function(){
-    return {
+
+  data(){
+    return{
       eyecatch: null,
       exp: null,
       flows: null,
       quote: true
     };
   },
-  created: function(){
-    this.fetchFlows();
-  },
-  methods: {
-    fetchFlows: function(){
-      fetch('https://bubekiti.microcms.io/api/v1/flow', {
-      headers: {
-        'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
-      },
-    })
-      .then(res => res.json())
-      .then(json => {
-        this.eyecatch = json.eyecatch.url;
-        this.exp = json.exp;
-        this.flows = json.flow;
-      })
-      .catch(error => {
-        console.log(error);
-      })
-    },
+  async asyncData(){
+    const{data} = await axios.get(
+      "https://bubekiti.microcms.io/api/v1/flow",
+      {
+        headers: {'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'}
+      }
+    );
+    return{
+      eyecatch: data.eyecatch.url,
+      exp: data.exp,
+      flows: data.flow
+    };
   }
 }
+
+
+// export default {
+//   name: 'WorkDetail',
+//   components: {
+//     Contact,
+//     BtnToQuote,
+//     BtnToQa,
+//   },
+//   data: function(){
+//     return {
+//       eyecatch: null,
+//       exp: null,
+//       flows: null,
+//       quote: true
+//     };
+//   },
+//   created: function(){
+//     this.fetchFlows();
+//   },
+//   methods: {
+//     fetchFlows: function(){
+//       fetch('https://bubekiti.microcms.io/api/v1/flow', {
+//       headers: {
+//         'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
+//       },
+//     })
+//       .then(res => res.json())
+//       .then(json => {
+//         this.eyecatch = json.eyecatch.url;
+//         this.exp = json.exp;
+//         this.flows = json.flow;
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       })
+//     },
+//   }
+// }
 </script>
 
 <style scoped lang="scss">

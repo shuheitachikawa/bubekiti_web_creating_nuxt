@@ -6,14 +6,14 @@
         <ul class="works__list">
 
           <li v-for="work in works" v-bind:key="work.id" class="works__item">
-            <router-link v-bind:to="{path: `/works/${work.id}`}">
+            <nuxt-link v-bind:to="{path: `/works/${work.id}`}">
               <div class="works__imgarea">
                 <img v-bind:src="work.eyecatch.url" alt="">
               </div>
               <div class="works__txtarea">
                 <p class="works__txt">{{work.title}}</p>
               </div>
-            </router-link>
+            </nuxt-link>
           </li>
 
         </ul>
@@ -27,7 +27,7 @@
 
 
 // @ is an alias to /src
-import Contact from '@/components/Contact.vue'
+//import Contact from '@/components/Contact.vue'
 import axios from 'axios';
 
 export default {
