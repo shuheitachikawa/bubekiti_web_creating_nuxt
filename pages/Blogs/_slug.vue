@@ -223,7 +223,7 @@ $grey-font:#A0A0A0;
 
 
 /deep/ pre{
-  display: block;
+  display: inline-block;
   background-color: #333333;
   padding-top: 15px;
   padding-bottom: 15px;
