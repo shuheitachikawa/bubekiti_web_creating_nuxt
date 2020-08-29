@@ -29,7 +29,7 @@ var filterArticle = function(articles, articleId){
   articles = articles.filter(function(article){
     return article.id === articleId;
   })
-  console.log(articles);
+  //console.log(articles);
   return articles;
 };
 
