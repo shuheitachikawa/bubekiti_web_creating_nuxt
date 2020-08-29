@@ -231,7 +231,8 @@ $grey-font:#A0A0A0;
   padding-right: 0;
   margin: 0;
   overflow: scroll;
-  width: 100px;
+  width: 90vw;
+  max-width:710px;
   code{
     color:#ffffff;
     background-color: #333333;
