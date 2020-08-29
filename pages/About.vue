@@ -4,7 +4,7 @@
       
       <div class="about__strength">
         <h2 class="about__strength-title">制作の特徴</h2>
-        <p v-html="strength" class="about__strength-text"></p>
+        <div v-html="strength" class="about__strength-text"></div>
       </div>
 
       <div class="about__person">
@@ -15,7 +15,7 @@
             <img v-show="real" src="../assets/bubekiti.jpg" alt="">
           </div>
           <div class="about__person-txtarea">
-            <p v-html="person" class="about__person-text"></p>
+            <div v-html="person" class="about__person-text"></div>
           </div>
         </div>
       </div>
@@ -23,10 +23,12 @@
       <div class="about__profile">
         <h2 class="about__profile-title">プロフィール</h2>
         <table class="about__profile-table">
-          <tr v-for="tableItem in tableItems" v-bind:key="tableItem.id">
-            <td v-html="tableItem.item" class="table-item"></td>
-            <td v-html="tableItem.value" class="table-value"></td>
-          </tr>         
+          <tbody>
+            <tr v-for="tableItem in tableItems" v-bind:key="tableItem.id">
+              <td v-html="tableItem.item" class="table-item"></td>
+              <td v-html="tableItem.value" class="table-value"></td>
+            </tr>         
+          </tbody>
         </table>
       </div>
 
@@ -148,7 +150,7 @@ $grey-back:#F4F4F4;
 $black-font:#333333;
 $grey-font:#A0A0A0;
 
-p{
+p, .about__strength-text ,.about__person-text{
   font-size: 1.6rem;
   line-height: 2.5rem;
 }

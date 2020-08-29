@@ -25,13 +25,13 @@
 
 <script>
 
-var filterArticle = function(articles, articleId){
-  articles = articles.filter(function(article){
-    return article.id === articleId;
-  })
-  //console.log(articles);
-  return articles;
-};
+// var filterArticle = function(articles, articleId){
+//   articles = articles.filter(function(article){
+//     return article.id === articleId;
+//   })
+//   //console.log(articles);
+//   return articles;
+// };
 
 // @ is an alias to /src
 import Contact from '@/components/Contact.vue'
@@ -39,49 +39,78 @@ import BtnToQuote from '@/components/BtnToQuote.vue'
 import BtnToQa from '@/components/BtnToQa.vue'
 import BtnToFlow from '@/components/BtnToFlow.vue'
 
+import axios from 'axios';
+
 export default {
-  name: 'ServiceDetail',
-  components: {
-    Contact,
-    BtnToQuote,
-    BtnToQa,
-    BtnToFlow,
-  },
-  data: function(){
-    return {
-      title: null,
-      image: null,
-      text: null
+
+  data(){
+    return{
+      title: "",
+      image: "",
+      text: ""
     };
   },
-  created: function(){
-    this.fetchArticle();
-  },
-  watch:{
-    '$route': 'fetchArticle'
-  },
-  methods: {
-    fetchArticle: function(){
-      fetch('https://bubekiti.microcms.io/api/v1/news', {
-      headers: {
-        'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
-      },
-    })
-      .then(res => res.json())
-      .then(json => json.contents)
-      .then(articles => 
-        filterArticle(articles, this.$route.params.slug)
-      )
-      .then(articles => {
-        this.title = articles[0].title;
-        this.image = articles[0].eyecatch.url;
-        this.text = articles[0].text;
-      })
-      .catch(error => {
-        console.log(error);
-      })
-    },      
+  async asyncData({params}){
+    //console.log(params);
+    const{data} = await axios.get(
+      `https://bubekiti.microcms.io/api/v1/news?filters=id[equals]${params.slug}`,
+      {
+        headers: {'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'}
+      }
+    );
+    //filterArticles(data.contents, $route.params.slug);
+    console.log(data.contents);
+    return{
+      title: data.contents[0].title,
+      image: data.contents[0].eyecatch.url,
+      text: data.contents[0].text
+    };
   }
+
+
+
+  // name: 'ServiceDetail',
+  // components: {
+  //   Contact,
+  //   BtnToQuote,
+  //   BtnToQa,
+  //   BtnToFlow,
+  // },
+  // data: function(){
+  //   return {
+  //     title: null,
+  //     image: null,
+  //     text: null
+  //   };
+  // },
+  // created: function(){
+  //   this.fetchArticle();
+  // },
+  // watch:{
+  //   '$route': 'fetchArticle'
+  // },
+  // methods: {
+  //   fetchArticle: function(){
+  //     fetch('https://bubekiti.microcms.io/api/v1/news', {
+  //     headers: {
+  //       'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(json => json.contents)
+  //     .then(articles => 
+  //       filterArticle(articles, this.$route.params.slug)
+  //     )
+  //     .then(articles => {
+  //       this.title = articles[0].title;
+  //       this.image = articles[0].eyecatch.url;
+  //       this.text = articles[0].text;
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     })
+  //   },      
+  // }
 }
 </script>
 

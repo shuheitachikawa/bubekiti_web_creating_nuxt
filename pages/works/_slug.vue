@@ -13,24 +13,28 @@
       </a>
       <div class="works-single__txtarea">
         <table class="works-single__table table-1">
-          <tr>
-            <td valign="middle"  class="works-single__table-title">公開日</td>
-            <td valign="middle" >{{date}}</td>
-          </tr>
-          <tr>
-            <td valign="middle"  class="works-single__table-title">制作内容</td>
-            <td v-html="work" valign="middle" class="works-single__table-work"></td>
-          </tr>
+          <tbody>
+            <tr>
+              <td valign="middle"  class="works-single__table-title">公開日</td>
+              <td valign="middle" >{{date}}</td>
+            </tr>
+            <tr>
+              <td valign="middle"  class="works-single__table-title">制作内容</td>
+              <td v-html="work" valign="middle" class="works-single__table-work"></td>
+            </tr>
+          </tbody>
         </table>
         <table class="works-single__table table-2">
-          <tr>
-            <td valign="middle"  class="works-single__table-title">ページ数</td>
-            <td valign="middle" >{{page}}</td>
-          </tr>
-          <tr>
-            <td valign="middle"  class="works-single__table-title">制作期間</td>
-            <td valign="middle" >{{span}}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td valign="middle"  class="works-single__table-title">ページ数</td>
+              <td valign="middle" >{{page}}</td>
+            </tr>
+            <tr>
+              <td valign="middle"  class="works-single__table-title">制作期間</td>
+              <td valign="middle" >{{span}}</td>
+            </tr>
+          </tbody>
         </table>
         <div v-html="text" class="works-single__text">
           

@@ -4,11 +4,11 @@
       <div class="flow__image">
         <img v-bind:src="eyecatch" alt="">
       </div>
-      <p v-html="exp" class="flow__exp"></p>
+      <div v-html="exp" class="flow__exp"></div>
       <ul class="flow__list">
         <li v-for="flow in flows" v-bind:key="flow.key" class="flow__item">
           <h3 class="flow__title">{{flow.title}}</h3>
-          <p v-html="flow.detail" class="flow__text"></p>
+          <div v-html="flow.detail" class="flow__text"></div>
         </li>
       </ul>
       <p class="flow__comment">ご不明点があればお気軽にお問い合わせください。</p>
