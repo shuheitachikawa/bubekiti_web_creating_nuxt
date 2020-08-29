@@ -1,20 +1,20 @@
 <template>
-   <header>
-      <div class="header__container">
-        <nuxt-link class="header__title" to="/"><img src="../assets/title.png" alt=""></nuxt-link>
-        <nav class="header__menu" id="nav">
-          <ul class="header__menu--list">
-            <li class="header__menu--item" exact><nuxt-link to="services">サービス</nuxt-link></li>
-            <li class="header__menu--item" exact><nuxt-link to="works">制作実績</nuxt-link></li>
-            <li class="header__menu--item" exact><nuxt-link to="flow">制作の流れ</nuxt-link></li>
-            <li class="header__menu--item" exact><nuxt-link to="about">事業内容</nuxt-link></li>
-            <li class="header__menu--item" exact><nuxt-link to="blogs">ブログ</nuxt-link></li>
-            <li class="header__menu--item inquiry-menu-pc" exact><nuxt-link to="/inquiry">お問い合わせ</nuxt-link></li>
-          </ul>
-            <div class="inquiry-menu-sp" exact><nuxt-link to="/inquiry">お問合わせ</nuxt-link></div>
-        </nav>
-      </div>
-    </header>
+  <header>
+    <div class="header__container">
+      <nuxt-link class="header__title" to="/"><img src="../assets/title.png" alt=""></nuxt-link>
+      <nav class="header__menu" id="nav">
+        <ul class="header__menu--list">
+          <li class="header__menu--item" exact><nuxt-link to="services">サービス</nuxt-link></li>
+          <li class="header__menu--item" exact><nuxt-link to="works">制作実績</nuxt-link></li>
+          <li class="header__menu--item" exact><nuxt-link to="flow">制作の流れ</nuxt-link></li>
+          <li class="header__menu--item" exact><nuxt-link to="about">事業内容</nuxt-link></li>
+          <li class="header__menu--item" exact><nuxt-link to="blogs">ブログ</nuxt-link></li>
+          <li class="header__menu--item inquiry-menu-pc" exact><nuxt-link to="inquiry">お問い合わせ</nuxt-link></li>
+        </ul>
+          <div class="inquiry-menu-sp" exact><nuxt-link to="inquiry">お問合わせ</nuxt-link></div>
+      </nav>
+    </div>
+  </header>
 </template>
 
 <script>

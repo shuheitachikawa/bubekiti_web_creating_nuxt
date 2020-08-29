@@ -1,6 +1,6 @@
 <template>
   <section class="topview" id="hoge" v-bind:class="{'nuxt-link-top': $route.path === '/'}">
-    <transition name="slide">
+    <!-- <transition name="slide">
       <h1 v-if="$route.path === '/'" class="topview__title">秦野のホームページ屋</h1>
     </transition>
     <transition name="slide">
@@ -32,12 +32,12 @@
     </transition>
     <transition name="slide">
       <h1 v-if="$route.path === '/qa'" class="topview__title">Q＆A</h1>
-    </transition>
+    </transition> -->
 
     <div class="topview__img">
       <img src="../assets/intro.png" alt="手軽に名刺替わりのホームページ制作">
     </div>
-    
+
   <!-- <particles-bg type="custom" :config="config" :bg="true" class="topview__area"/> -->
 
   
