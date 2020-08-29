@@ -25,26 +25,16 @@
 
 <script>
 
-var filterArticle = function(articles, articleId){
-  articles = articles.filter(function(article){
-    return article.id === articleId;
-  })
-  console.log(articles);
-  return articles;
-};
-
 // @ is an alias to /src
 import Contact from '@/components/Contact.vue'
 import BlogAside from '@/components/BlogAside.vue'
 
+import axios from 'axios';
+
 export default {
-  name: 'BlogDetail',
-  components: {
-    Contact,
-    BlogAside,
-  },
-  data: function(){
-    return {
+
+  data(){
+    return{
       title: null,
       date: null,
       image: null,
@@ -53,38 +43,21 @@ export default {
       text: null
     };
   },
-  created: function(){
-    this.fetchArticle();
-  },
-  watch:{
-    '$route': 'fetchArticle'
-  },
-  methods: {
-    fetchArticle: function(){
-      fetch(`https://bubekiti.microcms.io/api/v1/blog/`, {
-      headers: {
-        'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
-      },
-    })
-      .then(res => res.json())
-      .then(json => json.contents)
-      .then(articles => 
-        filterArticle(articles, this.$route.params.slug)
-        
-      )
-      .then(articles => {
-        this.title = articles[0].title;
-        this.date = articles[0].updatedAt.substr(0, 10);
-        this.image = articles[0].eyecatch.url;
-        this.category = articles[0].category;
-        this.intro = articles[0].intro.intro;
-        this.text = articles[0].content;
-        this.description = htmlthis.text
-      })
-      .catch(error => {
-        console.log(error);
-      })
-    },      
+  async asyncData({params}){
+    const{data} = await axios.get(
+      `https://bubekiti.microcms.io/api/v1/blog?filters=id[equals]${params.slug}`,
+      {
+        headers: {'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'}
+      }
+    );
+    return{
+      title: data.contents[0].title,
+      date:  data.contents[0].updatedAt.substr(0, 10),
+      image: data.contents[0].eyecatch.url,
+      text: data.contents[0].content,
+      category: data.contents[0].category,
+      intro: data.contents[0].intro.intro,
+    };
   },
   head () {
     return {

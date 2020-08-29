@@ -26,17 +26,6 @@
 </template>
 
 <script>
-// // @ is an alias to /src
-// import Service from '@/components/Service.vue'
-// import Contact from '@/components/Contact.vue'
-
-// export default {
-//   name: 'Services',
-//   components: {
-//   //  TopView,
-//     Service,
-//     Contact,
-//   }
 
 import axios from 'axios';
 export default {
@@ -56,35 +45,9 @@ export default {
       services: data.contents
     };
     console.log(services);
-  }
+  },
 };
 
-  // name: 'Service',
-  // components: {
-
-  // },
-  // data: function(){
-  //   return {
-  //     services: null
-  //   }
-  // },
-  // created: function(){
-  //   this.fetchServices();
-  // },
-  // methods: {
-  //   fetchServices: function(){
-  //     fetch('https://bubekiti.microcms.io/api/v1/news', {
-  //       headers: {
-  //         'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
-  //       },
-  //     })
-  //     .then(res => res.json())
-  //     .then(json => json.contents)
-  //     .then(services => {
-  //       this.services = services;
-  //     })
-  //   }
-  // },
 </script>
 
 <style scoped lang="scss">
