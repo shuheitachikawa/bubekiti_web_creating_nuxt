@@ -90,11 +90,6 @@ export default {
   
 //mixin
 @import '../../scss/mixin/container';
-// @import '../scss/mixin/title-bar';
-// @import '../scss/mixin/btn';
-// @import '../scss/mixin/sectionTitle';
-// @import '../scss/mixin/contactBtn';
-
 
 $blue:#64D5FF;
 $purple:#8400B5;

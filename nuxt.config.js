@@ -53,6 +53,7 @@ export default {
   */
   plugins: [
   //  { src: '~/plugins/particles', mode: 'client' }
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Auto import components
