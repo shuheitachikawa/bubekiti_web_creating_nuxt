@@ -223,7 +223,6 @@ $grey-font:#A0A0A0;
 
 
 /deep/ pre{
-  display: inline-block;
   background-color: #333333;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -231,9 +230,6 @@ $grey-font:#A0A0A0;
   padding-right: 0;
   margin: 0;
   overflow: auto;
-  word-wrap: normal;
-  width: 90vw;
-  max-width:710px;
   code{
     color:#ffffff;
     background-color: #333333;
