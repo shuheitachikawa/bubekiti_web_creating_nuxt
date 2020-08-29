@@ -221,6 +221,26 @@ $grey-font:#A0A0A0;
 }
 
 
+/deep/ pre{
+  display: block;
+  background-color: #333333;
+  padding: 15px;
+  code{
+    color:#ffffff;
+    background-color: #333333;
+  }
+}
+
+/deep/ code{
+  color:$purple;
+  background:#f5d8ff;
+  padding-right: 3px;
+  padding-left: 3px;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+
 @media (max-width:1000px){
   .intro-comment{
     font-size: 18px;
