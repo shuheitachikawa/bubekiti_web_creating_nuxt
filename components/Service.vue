@@ -9,7 +9,7 @@
 
         <!-- 記事アイコン -->
         <li v-for="service in services" v-bind:key="service.id" class="service__item">
-          <nuxt-link v-bind:to="{path: `/services/${service.id}`}">
+          <nuxt-link v-bind:to="`/services/${service.id}`">
             <div class="service__img">
               <img v-bind:src="service.eyecatch.url" alt="">
             </div>
