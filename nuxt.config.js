@@ -52,7 +52,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '~/plugins/particles', mode: 'client' }
+  //  { src: '~/plugins/particles', mode: 'client' }
   ],
   /*
   ** Auto import components

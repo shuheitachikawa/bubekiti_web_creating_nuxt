@@ -37,35 +37,8 @@
     <div class="topview__img">
       <img src="../assets/intro.png" alt="手軽に名刺替わりのホームページ制作">
     </div>
-
-    <!-- <particles /> -->
-    <!-- <particles-bg type="circle" :bg="true" /> -->
-    <!-- <particles-bg
-      type="circle"
-      color="#8400B5"
-      num= '[1, 10]'
-      scale= '[1.1, 0.4]'
-      alpha= '[0.6, 0]'
-      class="topview__area"
-    >
-    </particles-bg> -->
-    <!-- <particles-bg
-      type="circle"
-      :number="30"
-      :area="1000"
-      color="#8400B5"
-      shape="circle"
-      :opacity="0"
-      :speed="4"
-      hoverMode="repulse"
-      :distanse="100"
-      clickMode="push"
-      class="topview__area"
-    >
-    </particles-bg> -->
-
     
-  <particles-bg type="custom" :config="config" :bg="true" class="topview__area"/>
+  <!-- <particles-bg type="custom" :config="config" :bg="true" class="topview__area"/> -->
 
   
     
@@ -73,27 +46,27 @@
 </template>
 
 <script>
-  export default {
-    data: function() {
-      return {
-        config: {
-          num: [1, 1],
-          rps: 0.3,
-          radius: [10, 3],
-          life: [10, 10],
-          v: [1, 2],
-          tha: [-10, 10],
-          shape: "circle",
-          alpha: [0.9, 0],
-          scale: [1, 1],
-          position: "all",
-          cross: "dead",
-          random: 5,
-          color:['#8400B5','#8400B5']
-        }
-      };
-    }
-  }
+  // export default {
+  //   data: function() {
+  //     return {
+  //       config: {
+  //         num: [1, 1],
+  //         rps: 0.3,
+  //         radius: [10, 3],
+  //         life: [10, 10],
+  //         v: [1, 2],
+  //         tha: [-10, 10],
+  //         shape: "circle",
+  //         alpha: [0.9, 0],
+  //         scale: [1, 1],
+  //         position: "all",
+  //         cross: "dead",
+  //         random: 5,
+  //         color:['#8400B5','#8400B5']
+  //       }
+  //     };
+  //   }
+  // }
 </script>
 
 

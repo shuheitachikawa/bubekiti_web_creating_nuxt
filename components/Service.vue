@@ -8,7 +8,6 @@
       <ul class="service__list">
 
         <!-- 記事アイコン -->
-        <client-only>
         <li v-for="service in services" v-bind:key="service.id" class="service__item">
           <nuxt-link v-bind:to="{path: `/services/${service.id}`}">
             <div class="service__img">
@@ -19,7 +18,6 @@
             </div>
           </nuxt-link>
         </li>
-        </client-only>
 
       </ul>
     </div>
