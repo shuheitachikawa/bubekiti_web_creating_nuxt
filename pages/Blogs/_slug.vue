@@ -224,16 +224,21 @@ $grey-font:#A0A0A0;
 /deep/ pre{
   display: block;
   background-color: #333333;
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 0;
+  margin: 0;
   code{
     color:#ffffff;
     background-color: #333333;
+    margin: 0;
   }
 }
 
 /deep/ code{
   color:$purple;
-  background:#f5d8ff;
+  background:#fbeeff;
   padding-right: 3px;
   padding-left: 3px;
   margin-right: 3px;
