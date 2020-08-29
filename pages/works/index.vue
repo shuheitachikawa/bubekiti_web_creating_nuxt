@@ -5,10 +5,8 @@
       <div class="works__area">
         <ul class="works__list">
 
-          <li v-for="work in works" class="works__item">
-          <!-- <li v-for="work in works" v-bind:key="work.id" class="works__item"> -->
+          <!-- <li v-for="work in works" v-bind:key="work.id" class="works__item">
             <nuxt-link v-bind:to="`/works/${work.id}`">
-            <!-- <nuxt-link v-bind:to="{path: `/works/${work.id}`}"> -->
               <div class="works__imgarea">
                 <img v-bind:src="work.eyecatch.url" alt="">
               </div>
@@ -16,7 +14,7 @@
                 <p class="works__txt">{{work.title}}</p>
               </div>
             </nuxt-link>
-          </li>
+          </li> -->
 
         </ul>
       </div>
