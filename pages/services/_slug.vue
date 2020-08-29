@@ -51,15 +51,12 @@ export default {
     };
   },
   async asyncData({params}){
-    //console.log(params);
     const{data} = await axios.get(
       `https://bubekiti.microcms.io/api/v1/news?filters=id[equals]${params.slug}`,
       {
         headers: {'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'}
       }
     );
-    //filterArticles(data.contents, $route.params.slug);
-    console.log(data.contents);
     return{
       title: data.contents[0].title,
       image: data.contents[0].eyecatch.url,
