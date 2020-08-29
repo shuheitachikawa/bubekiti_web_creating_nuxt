@@ -4,12 +4,7 @@
       <p class="works__text">公開許可をいただいた実績をご紹介しています。</p>
       <div class="works__area">
         <ul class="works__list">
-<li>aaa</li>
-<li>aaa</li>
-<li>aaa</li>
-<li>aaa</li>
-<li>aaa</li>
-          <!-- <li v-for="work in works" v-bind:key="work.id" class="works__item">
+          <li v-for="work in works" v-bind:key="work.id" class="works__item">
             <nuxt-link v-bind:to="`/works/${work.id}`">
               <div class="works__imgarea">
                 <img v-bind:src="work.eyecatch.url" alt="">
@@ -18,7 +13,7 @@
                 <p class="works__txt">{{work.title}}</p>
               </div>
             </nuxt-link>
-          </li> -->
+          </li>
 
         </ul>
       </div>
