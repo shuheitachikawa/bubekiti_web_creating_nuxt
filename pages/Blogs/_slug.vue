@@ -230,7 +230,7 @@ $grey-font:#A0A0A0;
   padding-left: 10px;
   padding-right: 0;
   margin: 0;
-  overflow: scroll;
+  overflow: auto;
   width: 90vw;
   max-width:710px;
   code{
