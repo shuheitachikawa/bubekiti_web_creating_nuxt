@@ -158,6 +158,7 @@ $grey-font:#A0A0A0;
   }
 }
 .blog__text{
+  overflow: scroll;
   /deep/ h2{
     font-size: 2.5rem;
     padding:20px 40px 18px;
@@ -229,6 +230,8 @@ $grey-font:#A0A0A0;
   padding-left: 10px;
   padding-right: 0;
   margin: 0;
+  overflow: scroll;
+  width: 100px;
   code{
     color:#ffffff;
     background-color: #333333;
