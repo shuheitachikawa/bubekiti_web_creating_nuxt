@@ -2,9 +2,9 @@
   <section class="service">
     <div class="service__container">
       <h2 class="service__title">サービス一覧</h2>
-      <p class="service__txt-exp">
-        
-      </p>
+      <!-- <p class="service__txt-exp">
+      
+      </p> -->
       <ul class="service__list">
 
         <!-- 記事アイコン -->
