@@ -97,8 +97,7 @@ $grey-font:#A0A0A0;
   }
 }
 
-/deep/ .quote{
-  &__btn{
+/deep/ .quote__btn{
     display: block;
     height: 100%;
     width: 100%;
@@ -106,8 +105,8 @@ $grey-font:#A0A0A0;
     top: 0%;
     left: 0%;
     background: transparent;
-  }
-  &__txt{
+}
+/deep/ .quote__txt{
     position: absolute;
     width: 100%;
     top:50%;
@@ -116,7 +115,7 @@ $grey-font:#A0A0A0;
     color:$black-font;
     font-size: 1.8rem;
   }
-}
+
 
 @media (max-width:500px){
   .guide{
@@ -132,10 +131,8 @@ $grey-font:#A0A0A0;
     margin-top: 25vw;
     }
   }
-  /deep/ .quote{
-    &__txt{
-      font-size: 13px;
-    }
+  /deep/ .quote__txt{
+    font-size: 13px;
   }
 }
 
