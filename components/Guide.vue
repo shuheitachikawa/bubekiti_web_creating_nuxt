@@ -5,7 +5,10 @@
       <div class="guide__list">
         <div class="guide__item"><nuxt-link to="/flow">制作の流れ</nuxt-link></div>
         <!-- <div class="guide__item"><nuxt-link to="/calc">簡単見積もり</nuxt-link></div> -->
-        <BtnToQuote class="guide__item"/>
+        <!-- <BtnToQuote class="guide__item"/> -->
+        <div class="guide__item quote">
+          <BtnToQuote class="quote-btn"/>
+        </div>
         <div class="guide__item"><nuxt-link to="/qa">よくある質問</nuxt-link></div>
       </div>
     </div>
@@ -70,7 +73,6 @@ $grey-font:#A0A0A0;
   }
   &__item{
     user-select:none;
-    display: block;
     width: 32%;
     max-width: 173px;
     border-radius: 50%;
@@ -79,6 +81,15 @@ $grey-font:#A0A0A0;
     font-size: 2rem;
     font-weight: bold;
     position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.quote{
+      .quote-btn{
+        position: absolute;
+      }
+    }
     a{
       position: absolute;
       top: 50%;
@@ -97,24 +108,24 @@ $grey-font:#A0A0A0;
   }
 }
 
-::v-deep .quote__btn{
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    background: transparent;
-}
-::v-deep .quote__txt{
-    position: absolute;
-    width: 100%;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -40%);
-    color:$black-font;
-    font-size: 1.8rem;
-  }
+// ::v-deep .quote__btn{
+//     display: block;
+//     height: 100%;
+//     width: 100%;
+//     position: absolute;
+//     top: 0%;
+//     left: 0%;
+//     background: transparent;
+// }
+// ::v-deep .quote__txt{
+//     position: absolute;
+//     width: 100%;
+//     top:50%;
+//     left:50%;
+//     transform: translate(-50%, -40%);
+//     color:$black-font;
+//     font-size: 1.8rem;
+//   }
 
 
 @media (max-width:500px){
@@ -131,9 +142,9 @@ $grey-font:#A0A0A0;
     margin-top: 25vw;
     }
   }
-  /deep/ .quote__txt{
-    font-size: 13px;
-  }
+  // /deep/ .quote__txt{
+  //   font-size: 13px;
+  // }
 }
 
 </style>
