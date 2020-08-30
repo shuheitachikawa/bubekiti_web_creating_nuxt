@@ -258,4 +258,23 @@ $grey-font:#A0A0A0;
   }
 }
 
+
+
+@media (max-width:750px){
+  .blogs{
+    &__item{
+      margin: 0 auto 32px;
+      width: 90vw;
+      height: calc(90vw * 272 / 288);
+      text-align: left;
+      &--title{
+        font-size: 1.7rem;
+      }
+    }
+    &__img{
+      height: 70%;
+    }
+  }
+}
+
 </style>
