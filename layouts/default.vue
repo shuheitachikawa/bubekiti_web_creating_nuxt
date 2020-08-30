@@ -42,7 +42,7 @@
 
   }
 
-  @media (max-width:1000px){
+  @media (max-width:1050px){
     html{
     font-size: 8px;
     }

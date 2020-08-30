@@ -241,7 +241,7 @@ $grey-font:#A0A0A0;
   }
   &__item{
     width: 324px;
-    height: 306px;
+    min-height: 306px;
     background-color: white;
     transition: .3s;
     margin-bottom: 24px;
@@ -266,7 +266,7 @@ $grey-font:#A0A0A0;
   }
   &__img{
     width: 100%;
-    //height: 70%;
+    height: 70%;
     overflow: hidden;
     position: relative;
     img{
@@ -315,9 +315,12 @@ $grey-font:#A0A0A0;
       justify-content: space-around;
     }
     &__item{
-      width: 230px;
-      height: 240px;
+      width: 250px;
+      //height: 240px;
       min-height: 200px;
+    }
+    &__img{
+      //height: auto;
     }
   }
 }
@@ -405,7 +408,7 @@ $grey-font:#A0A0A0;
 }
 
 
-@media (max-width:750px){
+@media (max-width:1050px){
   .container{
     padding: 16px;
     flex-direction: column-reverse;
