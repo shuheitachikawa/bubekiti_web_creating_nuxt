@@ -269,10 +269,12 @@ $grey-font:#A0A0A0;
     &__item{
       width: 250px;
       min-height: 200px;
+      &--title{
+        font-size: 1.8rem;
+      }
     }
   }
 }
-
 
 
 
