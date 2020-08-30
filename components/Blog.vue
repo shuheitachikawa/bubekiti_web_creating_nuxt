@@ -17,7 +17,7 @@
   export default {
     name: 'Blog',
     components: {
-     BlogCards
+     BlogCards,
     }
   }
 
