@@ -107,9 +107,11 @@
   position: relative;
   overflow: hidden;
   transition: .3s;
+
   background:#333333;
   color:white;
   z-index: -1;
+  
   &__img{
     display: none;
   }
