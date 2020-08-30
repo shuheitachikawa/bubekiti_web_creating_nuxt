@@ -4,34 +4,34 @@
       <h1 v-show="$route.path === '/'" class="topview__title">秦野のホームページ屋</h1>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path === '/services'" class="topview__title">SERVICES</h1>
+      <p v-show="$route.path === '/services'" class="topview__title">SERVICES</p>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path.indexOf('/services/') != -1" class="topview__title">SERVICE</h1>
+      <p v-show="$route.path.indexOf('/services/') != -1" class="topview__title">SERVICE</p>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path === '/works'" class="topview__title">WORKS</h1>
+      <p v-show="$route.path === '/works'" class="topview__title">WORKS</p>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path.indexOf('/works/') != -1" class="topview__title">WORK</h1>
+      <p v-show="$route.path.indexOf('/works/') != -1" class="topview__title">WORK</p>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path === '/flow'" class="topview__title">FLOW</h1>
+      <p v-show="$route.path === '/flow'" class="topview__title">FLOW</p>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path === '/blogs'" class="topview__title">BLOGS</h1>
+      <p v-show="$route.path === '/blogs'" class="topview__title">BLOGS</p>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path.indexOf('/blogs/') != -1" class="topview__title">BLOG</h1>
+      <p v-show="$route.path.indexOf('/blogs/') != -1" class="topview__title">BLOG</p>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path === '/inquiry'" class="topview__title">INQUIRY</h1>
+      <p v-show="$route.path === '/inquiry'" class="topview__title">INQUIRY</p>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path === '/about'" class="topview__title">ABOUT</h1>
+      <p v-show="$route.path === '/about'" class="topview__title">ABOUT</p>
     </transition>
     <transition name="slide">
-      <h1 v-show="$route.path === '/qa'" class="topview__title">Q＆A</h1>
+      <p v-show="$route.path === '/qa'" class="topview__title">Q＆A</p>
     </transition>
 
     <div class="topview__img">

@@ -97,7 +97,7 @@ $grey-font:#A0A0A0;
   }
 }
 
-/deep/ .quote__btn{
+::v-deep .quote__btn{
     display: block;
     height: 100%;
     width: 100%;
@@ -106,7 +106,7 @@ $grey-font:#A0A0A0;
     left: 0%;
     background: transparent;
 }
-/deep/ .quote__txt{
+::v-deep .quote__txt{
     position: absolute;
     width: 100%;
     top:50%;
