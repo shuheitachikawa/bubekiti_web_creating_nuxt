@@ -84,12 +84,15 @@ $grey-font:#A0A0A0;
     }
     /deep/ &__item{
       margin: 0 auto 32px;
-      width: calc(100vw * 0.8);
-      height: calc(100vw * 0.8 / 1.4);
+      width: 90vw;
+      height: calc(90vw * 272 / 288);
       text-align: left;
+      &--title{
+        font-size: 1.7rem;
+      }
     }
     /deep/ &__img{
-      height: 80%;
+      height: 70%;
     }
     &__btnarea{
       margin-top: 32px;

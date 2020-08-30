@@ -196,7 +196,7 @@ $grey-font:#A0A0A0;
   }
   &__img{
     width: 100%;
-    //height: 70%;
+    height: 70%;
     overflow: hidden;
     position: relative;
     img{
@@ -248,6 +248,12 @@ $grey-font:#A0A0A0;
       width: 230px;
       height: 240px;
       min-height: 200px;
+      &--title{
+        font-size: 1.3rem;
+      }
+    }
+    &__img{
+      height: 70%;
     }
   }
 }

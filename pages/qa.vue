@@ -25,40 +25,65 @@ var makeObj = function(qas){
   return qas;
 }
 
-
 import Contact from '@/components/Contact.vue'
 
+import axios from 'axios';
 export default {
-  name: 'Qa',
-  components: {
-    Contact,
+  data(){
+    return{
+      qas: []
+    };
   },
-  data: function(){
-    return {
-      qas: "",
-      //isActive: false
-    }
-  },
-  created: function(){
-    this.fetchQa();
+  async asyncData(){
+    const{data} = await axios.get(
+      "https://bubekiti.microcms.io/api/v1/questions",
+      {
+        headers: {'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'}
+      }
+    );
+    return{
+      qas: makeObj(data.qas)
+    };
   },
   methods: {
-    fetchQa: function(){
-      fetch('https://bubekiti.microcms.io/api/v1/questions', {
-      headers: {
-        'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
-      },
-    })
-      .then(res => res.json())
-      .then(json => {
-        this.qas = makeObj(json.qas);
-      })
-    },
     addAnswer: function(index){
       this.qas[index].isActive = !this.qas[index].isActive;
     },
   }
-}
+};
+
+
+// export default {
+//   name: 'Qa',
+//   components: {
+//     Contact,
+//   },
+//   data: function(){
+//     return {
+//       qas: "",
+//       //isActive: false
+//     }
+//   },
+//   created: function(){
+//     this.fetchQa();
+//   },
+//   methods: {
+//     fetchQa: function(){
+//       fetch('https://bubekiti.microcms.io/api/v1/questions', {
+//       headers: {
+//         'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
+//       },
+//     })
+//       .then(res => res.json())
+//       .then(json => {
+//         this.qas = makeObj(json.qas);
+//       })
+//     },
+//     addAnswer: function(index){
+//       this.qas[index].isActive = !this.qas[index].isActive;
+//     },
+//   }
+// }
 </script>
 
 

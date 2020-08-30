@@ -29,7 +29,6 @@
           <p class="footer__item-name">GUIDE</p>
           <ul class="footer__sub-list">
             <li class="footer__sub-item"><nuxt-link to="/flow">制作の流れ</nuxt-link></li>
-            <li class="footer__sub-item no-hover"><BtnToQuote class="footer__quote"/></li>
             <li class="footer__sub-item"><nuxt-link to="/qa">よくある質問</nuxt-link></li>
 
           </ul>

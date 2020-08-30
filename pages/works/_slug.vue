@@ -62,13 +62,12 @@ var filterArticle = function(articles, articleId){
 // @ is an alias to /src
 import Contact from '@/components/Contact.vue'
 
+import axios from 'axios';
+
 export default {
-  name: 'WorkDetail',
-  components: {
-    Contact,
-  },
-  data: function(){
-    return {
+
+  data(){
+    return{
       title: null,
       image: null,
       url: null,
@@ -79,41 +78,26 @@ export default {
       text: null
     };
   },
-  created: function(){
-    this.fetchArticle();
-  },
-  watch:{
-    '$route': 'fetchArticle'
-  },
-  methods: {
-    fetchArticle: function(){
-      fetch('https://bubekiti.microcms.io/api/v1/works', {
-      headers: {
-        'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'
-      },
-    })
-      .then(res => res.json())
-      .then(json => json.contents)
-      .then(works => 
-        filterArticle(works, this.$route.params.slug)
-      )
-      .then(works => {
-        this.title = works[0].title;
-        this.image = works[0].eyecatch.url;
-        this.url = works[0].url;
-        this.date = works[0].date;
-        this.work = works[0].work.replace(/\n/g, '<br/>');
-        this.page = works[0].page;
-        this.span = works[0].span;
-        this.text = works[0].text;
-
-      })
-      .catch(error => {
-        console.log(error);
-      })
-    },      
+  async asyncData({params}){
+    const{data} = await axios.get(
+      `https://bubekiti.microcms.io/api/v1/works?filters=id[equals]${params.slug}`,
+      {
+        headers: {'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'}
+      }
+    );
+    return{
+      title: data.contents[0].title,
+      image: data.contents[0].eyecatch.url,
+      url: data.contents[0].url,
+      date: data.contents[0].date,
+      work: data.contents[0].work.replace(/\n/g, '<br/>'),
+      page: data.contents[0].page,
+      span: data.contents[0].span,
+      text: data.contents[0].text
+    };
   }
 }
+
 </script>
 
 <style scoped lang="scss">
