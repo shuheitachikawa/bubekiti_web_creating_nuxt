@@ -270,7 +270,18 @@ $grey-font:#A0A0A0;
       width: 250px;
       min-height: 200px;
       &--title{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+
+@media (max-width:650px){ 
+  .blogs{
+    &__item{
+      &--title{
+        font-size: 2rem;
       }
     }
   }
