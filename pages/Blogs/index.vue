@@ -282,6 +282,7 @@ $grey-font:#A0A0A0;
     &__item{
       &--title{
         font-size: 2rem;
+        line-height: 1.5;
       }
     }
   }
