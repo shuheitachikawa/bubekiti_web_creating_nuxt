@@ -1,37 +1,37 @@
 <template>
   <section class="topview" id="hoge" v-bind:class="{'nuxt-link-top': $route.path === '/'}">
     <transition name="slide">
-      <h1 v-if="$route.path === '/'" class="topview__title">秦野のホームページ屋</h1>
+      <h1 v-show="$route.path === '/'" class="topview__title">秦野のホームページ屋</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path === '/services'" class="topview__title">SERVICES</h1>
+      <h1 v-show="$route.path === '/services'" class="topview__title">SERVICES</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path.indexOf('/services/') != -1" class="topview__title">SERVICE</h1>
+      <h1 v-show="$route.path.indexOf('/services/') != -1" class="topview__title">SERVICE</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path === '/works'" class="topview__title">WORKS</h1>
+      <h1 v-show="$route.path === '/works'" class="topview__title">WORKS</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path.indexOf('/works/') != -1" class="topview__title">WORK</h1>
+      <h1 v-show="$route.path.indexOf('/works/') != -1" class="topview__title">WORK</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path === '/flow'" class="topview__title">FLOW</h1>
+      <h1 v-show="$route.path === '/flow'" class="topview__title">FLOW</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path === '/blogs'" class="topview__title">BLOGS</h1>
+      <h1 v-show="$route.path === '/blogs'" class="topview__title">BLOGS</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path.indexOf('/blogs/') != -1" class="topview__title">BLOG</h1>
+      <h1 v-show="$route.path.indexOf('/blogs/') != -1" class="topview__title">BLOG</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path === '/inquiry'" class="topview__title">INQUIRY</h1>
+      <h1 v-show="$route.path === '/inquiry'" class="topview__title">INQUIRY</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path === '/about'" class="topview__title">ABOUT</h1>
+      <h1 v-show="$route.path === '/about'" class="topview__title">ABOUT</h1>
     </transition>
     <transition name="slide">
-      <h1 v-if="$route.path === '/qa'" class="topview__title">Q＆A</h1>
+      <h1 v-show="$route.path === '/qa'" class="topview__title">Q＆A</h1>
     </transition>
 
     <div class="topview__img">
