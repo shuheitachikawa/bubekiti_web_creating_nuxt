@@ -38,7 +38,7 @@
       <img src="../assets/intro.png" alt="手軽に名刺替わりのホームページ制作">
     </div>
 
-  <!-- <particles-bg type="custom" :config="config" :bg="true" class="topview__area"/> -->
+  <particles-bg type="custom" :config="config" :bg="true" class="topview__area"/>
 
   
     
@@ -46,27 +46,27 @@
 </template>
 
 <script>
-  // export default {
-  //   data: function() {
-  //     return {
-  //       config: {
-  //         num: [1, 1],
-  //         rps: 0.3,
-  //         radius: [10, 3],
-  //         life: [10, 10],
-  //         v: [1, 2],
-  //         tha: [-10, 10],
-  //         shape: "circle",
-  //         alpha: [0.9, 0],
-  //         scale: [1, 1],
-  //         position: "all",
-  //         cross: "dead",
-  //         random: 5,
-  //         color:['#8400B5','#8400B5']
-  //       }
-  //     };
-  //   }
-  // }
+  export default {
+    data: function() {
+      return {
+        config: {
+          num: [1, 1],
+          rps: 0.3,
+          radius: [10, 3],
+          life: [10, 10],
+          v: [1, 2],
+          tha: [-10, 10],
+          shape: "circle",
+          alpha: [0.9, 0],
+          scale: [1, 1],
+          position: "all",
+          cross: "dead",
+          random: 5,
+          color:['#8400B5','#8400B5']
+        }
+      };
+    }
+  }
 </script>
 
 
