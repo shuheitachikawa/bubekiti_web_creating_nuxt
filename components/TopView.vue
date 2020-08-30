@@ -63,7 +63,8 @@
           position: "all",
           cross: "dead",
           random: 5,
-          color:['#8400B5','#8400B5']
+          //color:['#8400B5','#8400B5']
+          color:['#e2ff3c','#e2ff3c']
         }
       };
     }
@@ -106,6 +107,9 @@
   position: relative;
   overflow: hidden;
   transition: .3s;
+  background:#333333;
+  color:white;
+  z-index: -1;
   &__img{
     display: none;
   }
