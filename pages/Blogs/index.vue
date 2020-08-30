@@ -73,6 +73,10 @@ var getCategory = function(articles){
       isActive: false
     })
   }
+  categoriesObj.unshift({
+    name: '全て',
+    isActive: true
+  });
   return categoriesObj;
 };
 
@@ -92,13 +96,6 @@ export default {
   data(){
     return{
       articles: [],
-      // allArticles: null,
-      // categories: [],
-      // Null: false,
-      // serchName: '',
-      // categories: '',
-      // selectedCategory: '',
-      // category: '',
     };
   },
   async asyncData(){
@@ -114,6 +111,7 @@ export default {
   },
   data: function(){
     return{
+      //articles: [],
       allArticles: null,
       categories: [],
       Null: false,
@@ -123,10 +121,22 @@ export default {
       category: '',
     }
   },
+  created: function(){
+    this.setAllArticles();
+    this.filterArticles();
+  },
+  watch: {
+    'serchName': 'serchArticle',
+  },
   methods:{
+    setAllArticles: function(){
+      this.allArticles = this.articles;
+    },
+    filterArticles: function(){
+      this.categories = getCategory(this.articles);
+    },
     serchArticle: function(){
       this.Null = false;
-      this.articles = this.allArticles;
       this.articles = filterByName(this.articles, this.serchName);
       console.log(this.articles)
       if(this.articles.length === 0){
@@ -134,24 +144,23 @@ export default {
       }
     },
     sortArticle: function(){
-      this.articles = this.allArticles;
-      if(this.selecCategory !== this.categories[0].name){
-        this.articles = filterByCategory(this.articles, this.selecCategory);
+      console.log(this.selectedCategory);
+      if(this.selectedCategory !== this.categories[0].name){
+        this.articles = filterByCategory(this.articles, this.selectedCategory);
       }
     },
-    updateCategories(categories){
-      this.categories = categories;
-      console.log(this.categories);
-    },
     sortArticles: function(index){
+      this.articles = this.allArticles;
       this.serchName = ''; //カテゴー選択で検索窓の文字リセット
       this.categories.map(function(a){
         a.isActive = false;
       });
       this.selectedCategory = this.categories[index].name;
-      this.categories[index].isActive = !this.categories[index].isActive;
+      this.categories[index].isActive = true;
+      this.sortArticle();
     },
     resetSort: function(){
+      this.articles = this.allArticles;
       this.categories.map(function(a){
         a.isActive = false;
       });
@@ -161,49 +170,6 @@ export default {
   }
 
 };
-
-
-// @ is an alias to /src
-// import Contact from '@/components/Contact.vue'
-// import BlogCards from '@/components/BlogCards.vue'
-// //import BlogAside from '@/components/BlogAside.vue'
-
-// export default {
-//   name: 'Blogs',
-//   components: {
-//     Contact,
-//     BlogCards,
-//   },
-//   data: function(){
-//     return {
-//       serchName: '',
-//       categories: '',
-//       selectedCategory: '',
-//       category: '',
-//     }
-//   },
-//   methods: {
-//     updateCategories(categories){
-//       this.categories = categories;
-//       console.log(this.categories);
-//     },
-//     sortArticles: function(index){
-//       this.serchName = ''; //カテゴー選択で検索窓の文字リセット
-//       this.categories.map(function(a){
-//         a.isActive = false;
-//       });
-//       this.selectedCategory = this.categories[index].name;
-//       this.categories[index].isActive = !this.categories[index].isActive;
-//     },
-//     resetSort: function(){
-//       this.categories.map(function(a){
-//         a.isActive = false;
-//       });
-//       this.selectedCategory = this.categories[0].name;
-//       this.categories[0].isActive = true;
-//     }
-//   }
-// }
 </script>
 
 <style scoped lang="scss">
@@ -295,20 +261,6 @@ $grey-font:#A0A0A0;
 }
 
 
-// @media (max-width:1200px){ 
-//   .blogs{
-//     &__list{
-//       justify-content: space-around;
-//     }
-//     &__item{
-//       width: 288px;
-//       min-height: 272px;
-//       &--time{
-//         margin-top: 8px;
-//       }
-//     }
-//   }
-// }
 @media (max-width:1050px){ 
   .blogs{
     &__list{
@@ -316,11 +268,7 @@ $grey-font:#A0A0A0;
     }
     &__item{
       width: 250px;
-      //height: 240px;
       min-height: 200px;
-    }
-    &__img{
-      //height: auto;
     }
   }
 }
