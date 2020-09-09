@@ -7,7 +7,7 @@
         <div v-html="strength" class="about__strength-text"></div>
       </div>
 
-      <div class="about__person">
+      <div class="about__person" id="person">
         <h2 class="about__person-title">制作者について</h2>
         <div class="about__person-wrapper">
           <div class="about__person-img">
