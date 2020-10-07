@@ -11,7 +11,6 @@
         <h2 class="about__person-title">制作者について</h2>
         <div class="about__person-wrapper">
           <div class="about__person-img">
-            <!-- <img v-show="!real" src="../assets/bubekiti_fake.png" alt=""> -->
             <img v-show="real" src="../assets/bubekiti.jpg" alt="">
           </div>
           <div class="about__person-txtarea">

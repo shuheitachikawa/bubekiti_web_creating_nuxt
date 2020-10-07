@@ -44,7 +44,7 @@
         </li>
 
       </ul>
-      <p class="footer__copyright">©Copyright2020 Bubekiti Web creating.All Rights Reserved.</p>
+      <p class="footer__copyright">Bubekiti Web creating</p>
     </div>
   </footer>
 </template>
