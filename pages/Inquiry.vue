@@ -4,15 +4,17 @@
     <transition name="fade">
       <div class="form__area" v-show="state === 'input'">
         <p class="form__exp">お仕事のご依頼、ご相談、ご質問等、お気軽にお問い合わせください。</p>
-        <form action="" class="form__list">
-          <label for="" class="form__name">お名前</label><span class="form__caution" v-show="cautionName">入力してください。</span>
-          <input type="text" v-model="name">
-          <label for="" class="form__mail">メールアドレス</label><span class="form__caution" v-show="cautionMail">入力してください。</span>
-          <input type="text" v-model="mail">
-          <label for="" class="form__name">メッセージ本文</label><span class="form__caution" v-show="cautionText">入力してください。</span>
-          <textarea name="" id="" cols="30" rows="10" class="form__text" v-model="text"></textarea>
-          <div class="form__submit" v-on:click="ConfilmOrBack">確認</div>
-        </form>
+        <keep-alive>
+          <form action="" class="form__list">
+            <label for="" class="form__name">お名前</label><span class="form__caution" v-show="cautionName">入力してください。</span>
+            <input type="text" v-model="name">
+            <label for="" class="form__mail">メールアドレス</label><span class="form__caution" v-show="cautionMail">入力してください。</span>
+            <input type="text" v-model="mail">
+            <label for="" class="form__name">メッセージ本文</label><span class="form__caution" v-show="cautionText">入力してください。</span>
+            <textarea name="" id="" cols="30" rows="10" class="form__text" v-model="text"></textarea>
+            <div class="form__submit" v-on:click="ConfilmOrBack">確認</div>
+          </form>
+        </keep-alive>
         <p class="form__sub-txt">
           お客様のプライバシー・個人情報は、お問合せいただいた内容に関するご返答をさし上げる以外の目的では使用いたしません。
         </p>
