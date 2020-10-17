@@ -17,6 +17,9 @@ export default {
   */
   head: {
     title: 'Bubekiti Web creating | 神奈川県秦野市のWeb制作フリーランス',
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
