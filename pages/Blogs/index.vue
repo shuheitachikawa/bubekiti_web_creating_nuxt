@@ -7,7 +7,7 @@
         <article v-for="article in articles" v-bind:key="article.id" class="blogs__item">
           <nuxt-link v-bind:to="{path: `/blogs/${article.id}`}">
             <div class="blogs__img">
-              <img v-bind:src="article.eyecatch.url" alt="">
+              <img v-bind:src="article.eyecatch.url + '?fm=webp&w=300'" alt="">
               <p class="blogs__category">{{article.category}}</p>
             </div>
             <div class="blogs__txtarea">

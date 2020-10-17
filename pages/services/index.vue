@@ -10,7 +10,7 @@
           <li v-for="service in services" v-bind:key="service.id" class="service__item">
             <nuxt-link v-bind:to="`/services/${service.id}`">
               <div class="service__img">
-                <img v-bind:src="service.eyecatch.url" alt="">
+                <img v-bind:src="service.eyecatch.url + '?fm=webp&w=300'" alt="">
               </div>
               <div class="service__txtarea">
                 <p class="service__txt">{{service.title}}</p>

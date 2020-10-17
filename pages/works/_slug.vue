@@ -87,7 +87,7 @@ export default {
     );
     return{
       title: data.contents[0].title,
-      image: data.contents[0].eyecatch.url,
+      image: data.contents[0].eyecatch.url + '?fm=webp&w=400',
       url: data.contents[0].url,
       date: data.contents[0].date,
       work: data.contents[0].work.replace(/\n/g, '<br/>'),

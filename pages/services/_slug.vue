@@ -59,7 +59,7 @@ export default {
     );
     return{
       title: data.contents[0].title,
-      image: data.contents[0].eyecatch.url,
+      image: data.contents[0].eyecatch.url + '?fm=webp&w=600',
       text: data.contents[0].text
     };
   }

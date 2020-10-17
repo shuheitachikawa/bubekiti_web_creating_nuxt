@@ -7,7 +7,7 @@
           <li v-for="work in works" v-bind:key="work.id" class="works__item">
             <nuxt-link v-bind:to="`/works/${work.id}`">
               <div class="works__imgarea">
-                <img v-bind:src="work.eyecatch.url" alt="">
+                <img v-bind:src="work.eyecatch.url + '?fm=webp&w=300'" alt="">
               </div>
               <div class="works__txtarea">
                 <p class="works__txt">{{work.title}}</p>
