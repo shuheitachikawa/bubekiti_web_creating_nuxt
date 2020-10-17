@@ -53,7 +53,7 @@ export default {
     return{
       title: data.contents[0].title,
       date:  data.contents[0].updatedAt.substr(0, 10),
-      image: data.contents[0].eyecatch.url,
+      image: data.contents[0].eyecatch.url + '?fm=webp&w=600',
       text: data.contents[0].content,
       category: data.contents[0].category,
       intro: data.contents[0].intro.intro,
