@@ -44,7 +44,7 @@
         </li>
 
       </ul>
-      <p class="footer__copyright">Bubekiti Web creating</p>
+      <p class="footer__copyright">BUBEKITI.COM</p>
     </div>
   </footer>
 </template>

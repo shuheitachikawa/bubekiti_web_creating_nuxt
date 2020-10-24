@@ -6,7 +6,7 @@
         <p class="contact__exp">ご相談・お見積・お問い合せはお気軽にご連絡ください。</p>
       </div>
       <div class="contact__right">
-        <p class="contact__site-name">Bubekiti Web creating</p>
+        <p class="contact__site-name">Bubekiti</p>
         <p class="contact__email">mail : shuhei.tachikawa[@]bubekiti.com</p>
         <nuxt-link class="contact-btn" to="/inquiry">お問い合わせ</nuxt-link>
       </div>
