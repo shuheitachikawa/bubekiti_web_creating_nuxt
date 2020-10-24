@@ -1,7 +1,7 @@
 <template>
   <section class="topview" v-bind:class="{'nuxt-link-top': $route.path === '/'}">
     <transition name="slide">
-      <h1 v-show="$route.path === '/'" class="topview__title">秦野のホームページ屋</h1>
+      <h1 v-show="$route.path === '/'" class="topview__title">Jamstack web creating</h1>
     </transition>
     <transition name="slide">
       <p v-show="$route.path === '/services'" class="topview__title">SERVICES</p>
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+
   export default {
     data: function() {
       return {
@@ -75,6 +76,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 
 .slide-enter-active{
   transition: .7s;
@@ -121,8 +125,9 @@
     top: 35%;
     //left:50%;
     //transform: translate(-50%, -50%);
-    font-size: 3.2rem;
+    font-size: 5.4rem;
     overflow: hidden;
+    font-family: 'Russo One', sans-serif;
   }
 }
 .canvas{
