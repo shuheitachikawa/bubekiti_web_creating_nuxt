@@ -5,20 +5,20 @@
       <img src="../assets/intro.png" alt="手軽に名刺替わりのホームページ制作">
     </div>
     <div class="intro__container">
-      <h2 class="intro__title">ハイパフォーマンスなWebサイトでビジネスを後押し</h2>
+      <h2 class="intro__title">Jamstack技術を用いたWeb制作</h2>
       <div class="intro__exp">
+
         <ul class="intro__list">
-          <li class="intro__item">仕事でホームページが必要になった</li>
-          <li class="intro__item">ホームページを新しくしたい</li>
-          <li class="intro__item">モダンなWebサイトを取り入れたい</li>
-          <li class="intro__item">WordPressのメンテナンス工数を減らしたい</li>
+          <li class="intro__item">✔︎ 超高速動作</li>
+          <li class="intro__item">✔︎ 高セキュリティ</li>
+          <li class="intro__item">✔︎ 少メンテナンス</li>
+          <li class="intro__item">✔︎ 強SEO</li>
         </ul>
         <p class="intro__txt">
-          Jamstack技術で<br>
-          高速＋セキュアなWebサイトを構築します。
+          今の静的サイト、WordPressサイトを<br>モダンな制作技術で置き換えます。
         </p>
         <p class="intro__txt-exp">
-          Bubekiti(ブベキチ)は、神奈川県秦野市を拠点に活動しているWeb制作フリーランス(SOHO)です。神奈川・東京を中心にWeb制作業務(ホームページ制作 / HTMLコーディング / レスポンシブデザイン / CMS構築)を承っております。モダンな開発技術を用いた制作で、クライアント様の要望にお応えします。
+          Bubekiti(ブベキチ)は、東京・神奈川を拠点に活動しているWeb制作フリーランス(SOHO)です。Jamstack等のモダン技術を用いた制作で、クライアント様の要望にお応えします。
         </p>
         <nuxt-link class="intro__btn"  to="/about">制作の特徴 & 制作者について</nuxt-link>
       </div>
