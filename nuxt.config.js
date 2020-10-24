@@ -43,7 +43,8 @@ export default {
       { property: 'twitter:image', content: '/ogimage.jpg' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Russo+One&display=swap' }
     ]
   },
   /*
