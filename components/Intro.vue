@@ -14,6 +14,7 @@
           <li class="intro__item">WordPressのメンテナンス工数を減らしたい</li>
         </ul>
         <p class="intro__txt">
+          Jamstack技術で<br>
           高速＋セキュアなWebサイトを構築します。
         </p>
         <p class="intro__txt-exp">
