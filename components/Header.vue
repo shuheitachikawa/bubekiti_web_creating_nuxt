@@ -148,7 +148,7 @@
     display: block;
     position: absolute;
     right:0;
-    top:-70%;
+    top:-50%;
     // background-color: $purple;
     // padding: 8px 10px;
     // border-radius: 20px;
@@ -169,7 +169,7 @@
 
 @media (max-width:500px){
   header{
-    height: 100px;
+    height: auto;
   }
   .header{
     &__title{
