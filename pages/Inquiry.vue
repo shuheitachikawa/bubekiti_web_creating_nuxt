@@ -3,7 +3,8 @@
 
     <transition name="fade">
       <div class="form__area" v-show="state === 'input'">
-        <p class="form__exp">お仕事のご依頼、ご相談、ご質問等、お気軽にお問い合わせください。</p>
+        <p class="form__exp">ご相談、ご質問等、お気軽にお問い合わせください。</p>
+        <p class="form__exp">グルメ質問サービス PiTARIに関するお問い合わせもこちらからお願いいたします。</p>
         <keep-alive>
           <form action="" class="form__list">
             <label for="" class="form__name">お名前</label><span class="form__caution" v-show="cautionName">入力してください。</span>
