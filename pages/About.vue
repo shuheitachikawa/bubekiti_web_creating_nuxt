@@ -1,7 +1,6 @@
 <template>
   <div class="about__page">
     <div class="about__container">
-      
       <div class="about__strength">
         <h2 class="about__strength-title">制作の特徴</h2>
         <div v-html="strength" class="about__strength-text"></div>
@@ -11,7 +10,7 @@
         <h2 class="about__person-title">制作者について</h2>
         <div class="about__person-wrapper">
           <div class="about__person-img">
-            <img v-show="real" src="../assets/bubekiti.jpg" alt="">
+            <img v-show="real" src="../assets/bubekiti.jpg" alt="" />
           </div>
           <div class="about__person-txtarea">
             <div v-html="person" class="about__person-text"></div>
@@ -19,27 +18,23 @@
         </div>
       </div>
 
-      <div class="about__profile">
+      <div class="about__profile" id="profile">
         <h2 class="about__profile-title">プロフィール</h2>
         <table class="about__profile-table">
           <tbody>
             <tr v-for="tableItem in tableItems" v-bind:key="tableItem.id">
               <td v-html="tableItem.item" class="table-item"></td>
               <td v-html="tableItem.value" class="table-value"></td>
-            </tr>         
+            </tr>
           </tbody>
         </table>
       </div>
-
     </div>
-    <Contact/>
+    <Contact />
   </div>
 </template>
 
-
-
 <script>
-
 // var change = function(a){
 //   setTimeout(function(){
 //     a = true;
@@ -47,35 +42,33 @@
 //   },1000)
 // }
 
+import Contact from "@/components/Contact.vue";
 
-import Contact from '@/components/Contact.vue';
-
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-
-  data(){
-    return{
+  data() {
+    return {
       strength: "",
       person: "",
       tableItems: "",
-      real: true, 
+      real: true
     };
   },
-  async asyncData(){
-    const{data} = await axios.get(
+  async asyncData() {
+    const { data } = await axios.get(
       "https://bubekiti.microcms.io/api/v1/about",
       {
-        headers: {'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371'}
+        headers: { "X-API-KEY": "b99a477f-fdaa-43e0-8a72-de34af047371" }
       }
     );
-    return{
+    return {
       strength: data.strength,
       person: data.person,
       tableItems: data.profile
     };
   },
-  created: function(){
+  created: function() {
     //this.changeImageByDelay();
   },
   methods: {
@@ -86,10 +79,7 @@ export default {
     //   this.real = true;
     // }
   }
-}
-
-
-
+};
 
 // export default {
 //   name: 'About',
@@ -121,7 +111,7 @@ export default {
 //         this.person = json.person;
 //         this.tableItems = json.profile;
 //       })
-//     }, 
+//     },
 //     changeImageByDelay: function(){
 //       setTimeout(this.changeImage, 500);
 //     },
@@ -132,129 +122,127 @@ export default {
 // }
 </script>
 
-
-
 <style scoped lang="scss">
 //mixin
-@import '../scss/mixin/container';
-@import '../scss/mixin/title-bar';
-@import '../scss/mixin/btn';
-@import '../scss/mixin/sectionTitle';
-@import '../scss/mixin/contactBtn';
+@import "../scss/mixin/container";
+@import "../scss/mixin/title-bar";
+@import "../scss/mixin/btn";
+@import "../scss/mixin/sectionTitle";
+@import "../scss/mixin/contactBtn";
 
+$blue: #64d5ff;
+$purple: #8400b5;
+$grey-back: #f4f4f4;
+$black-font: #333333;
+$grey-font: #a0a0a0;
 
-$blue:#64D5FF;
-$purple:#8400B5;
-$grey-back:#F4F4F4;
-$black-font:#333333;
-$grey-font:#A0A0A0;
-
-p, .about__strength-text ,.about__person-text{
+p,
+.about__strength-text,
+.about__person-text {
   font-size: 1.6rem;
   line-height: 2.5rem;
 }
 
-h2{
+h2 {
   font-size: 20px;
   font-weight: bold;
 }
 
-.about{
-  &__page{
+.about {
+  &__page {
     background-color: $grey-back;
     padding-top: 16px;
   }
-  &__container{
+  &__container {
     @include _container;
     max-width: 732px;
     background-color: white;
     position: relative;
     padding: 35px;
   }
-  &__strength, &__person, &__profile{
+  &__strength,
+  &__person,
+  &__profile {
     padding: 40px 0;
     border-bottom: 1px solid $grey-back;
-    &-text{
+    &-text {
       margin-left: 8px;
       margin-top: 16px;
     }
   }
-  &__person{
-    &-wrapper{
+  &__person {
+    &-wrapper {
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-between;
     }
-    &-txtarea{
+    &-txtarea {
       width: 68%;
     }
-    &-img{
+    &-img {
       width: 30%;
-      img{
+      img {
         border-radius: 50%;
       }
     }
   }
-  &__profile{
+  &__profile {
     border-bottom: none;
-    &-table{
+    &-table {
       font-size: 1.4rem;
       margin: 0 auto;
       margin-top: 32px;
       width: 80%;
       max-width: 545px;
-      tr{
+      tr {
         height: 56px;
         line-height: 56px;
         border-bottom: 1px solid rgb(189, 189, 189);
       }
-      .tabel-item{
+      .tabel-item {
         width: 30%;
       }
-      .table-value{
+      .table-value {
         width: 70%;
       }
     }
   }
 }
 
-
-@media (max-width:650px){
-  .about{
-  &__container{
-    @include _container;
-    padding: 8px;
-  }
-  &__person{
-    &-wrapper{
-      display: block;
+@media (max-width: 650px) {
+  .about {
+    &__container {
+      @include _container;
+      padding: 8px;
     }
-    &-txtarea{
-      width: 100%;
-    }
-    &-img{
-      width: 70%;
-      margin: 16px auto 24px;
-    }
-  }
-  &__profile{
-    border-bottom: none;
-    &-table{
-      width: 95%;
-      tr{
-        height: 45px;
-        line-height: 45px;
+    &__person {
+      &-wrapper {
+        display: block;
       }
-      .tabel-item{
-        width: 25%;
+      &-txtarea {
+        width: 100%;
       }
-      .table-value{
-        width: 75%;
+      &-img {
+        width: 70%;
+        margin: 16px auto 24px;
+      }
+    }
+    &__profile {
+      border-bottom: none;
+      &-table {
+        width: 95%;
+        tr {
+          height: 45px;
+          line-height: 45px;
+        }
+        .tabel-item {
+          width: 25%;
+        }
+        .table-value {
+          width: 75%;
+        }
       }
     }
   }
 }
-}
-
-
 </style>
