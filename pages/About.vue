@@ -55,21 +55,21 @@ export default {
       real: true
     };
   },
-  async asyncData() {
+  async created() {
     const { data } = await axios.get(
       "https://bubekiti.microcms.io/api/v1/about",
       {
         headers: { "X-API-KEY": "b99a477f-fdaa-43e0-8a72-de34af047371" }
       }
     );
-    return {
-      strength: data.strength,
-      person: data.person,
-      tableItems: data.profile
-    };
-  },
-  created: function() {
-    //this.changeImageByDelay();
+    // return {
+    //   strength: data.strength,
+    //   person: data.person,
+    //   tableItems: data.profile
+    // };
+    this.strength = data.strength
+    this.person = data.person
+    this.tableItems = data.profile
   },
   methods: {
     // changeImageByDelay: function(){
