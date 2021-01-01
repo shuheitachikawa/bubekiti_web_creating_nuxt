@@ -67,9 +67,9 @@ export default {
     //   person: data.person,
     //   tableItems: data.profile
     // };
-    this.strength = data.strength
-    this.person = data.person
-    this.tableItems = data.profile
+    this.strength = data.strength;
+    this.person = data.person;
+    this.tableItems = data.profile;
   },
   methods: {
     // changeImageByDelay: function(){

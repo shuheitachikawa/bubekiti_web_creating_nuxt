@@ -1,7 +1,7 @@
 <template>
   <div class="works">
     <div class="container">
-      <p class="works__text">公開許可をいただいた実績をご紹介しています。</p>
+      <p class="works__text">Webサイト制作実績のみ、公開許可を頂いたものを掲載しています。</p>
       <div class="works__area">
         <ul class="works__list">
           <li v-for="work in works" v-bind:key="work.id" class="works__item">
