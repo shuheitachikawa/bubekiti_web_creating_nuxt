@@ -2,7 +2,7 @@
   <div class="about__page">
     <div class="about__container">
       <div class="about__strength">
-        <h2 class="about__strength-title">制作の特徴</h2>
+        <h2 class="about__strength-title">事業内容</h2>
         <div v-html="strength" class="about__strength-text"></div>
       </div>
 
@@ -19,7 +19,7 @@
       </div>
 
       <div class="about__profile" id="profile">
-        <h2 class="about__profile-title">プロフィール</h2>
+        <h2 class="about__profile-title">事業者</h2>
         <table class="about__profile-table">
           <tbody>
             <tr v-for="tableItem in tableItems" v-bind:key="tableItem.id">
@@ -180,6 +180,7 @@ h2 {
       width: 68%;
     }
     &-img {
+      display: none;
       width: 30%;
       img {
         border-radius: 50%;
@@ -223,7 +224,7 @@ h2 {
         width: 100%;
       }
       &-img {
-        width: 70%;
+        width: 30%;
         margin: 16px auto 24px;
       }
     }

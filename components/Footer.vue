@@ -18,12 +18,12 @@
           </ul>
         </li>
 
-        <li class="footer__item">
+        <!-- <li class="footer__item">
           <nuxt-link class="footer__item-name" to="/works">WORKS</nuxt-link>
           <ul class="footer__sub-list">
             <li class="footer__sub-item"><nuxt-link to="/works">制作物一覧</nuxt-link></li>
           </ul>
-        </li>
+        </li> -->
 
         <li class="footer__item">
           <p class="footer__item-name">GUIDE</p>

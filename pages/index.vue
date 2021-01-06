@@ -2,7 +2,7 @@
   <div class="home-page">
     <Intro/>
     <Service/>
-    <Work/>
+    <!-- <Work/> -->
     <Guide/>
     <Blog/>
     <Contact/>
