@@ -177,13 +177,19 @@ h2 {
       justify-content: space-between;
     }
     &-txtarea {
-      width: 68%;
+      // width: 68%;
+      width: 100%;
     }
     &-img {
       display: none;
       width: 30%;
       img {
         border-radius: 50%;
+      }
+    }
+    &-text {
+      ::v-deep a {
+        color: rgb(255, 141, 65);
       }
     }
   }

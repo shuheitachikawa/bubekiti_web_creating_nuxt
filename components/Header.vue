@@ -80,7 +80,7 @@
           width:1px;
           background-color:$grey-font;
           position: absolute;
-          right:-8px;
+          right:-20px;
           top:50%;
           transform: rotate(20deg) translate(0, -50%);
         }
